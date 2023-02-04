@@ -10,6 +10,7 @@
 ### Installation
       1. Clone the repo
       2. Install Go packages
+      3. Run "docker-compose up" to start the database
       3. Run the app
 
 
