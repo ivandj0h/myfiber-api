@@ -10,7 +10,7 @@ import (
 )
 
 func Init(c *config.Config) *gorm.DB {
-	url := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", c.DBUser, c.DBPassword, c.DBHost, c.Port, c.DBName)
+	url := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", c.DBUser, c.DBPass, c.DBHost, c.DBPort, c.DBName)
 	db, err := gorm.Open(postgres.Open(url), &gorm.Config{})
 
 	if err != nil {
@@ -18,6 +18,6 @@ func Init(c *config.Config) *gorm.DB {
 	}
 
 	db.AutoMigrate(&models.Product{})
-	return db
 
+	return db
 }
